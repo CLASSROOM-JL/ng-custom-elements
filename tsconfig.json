@@ -2,9 +2,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
@@ -19,8 +20,27 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+
+    "paths": {
+      "@modules/*": [
+        "app/module/*"
+      ],
+      "@interfaces/*": [
+        "app/interface/*"
+      ],
+      "@enums/*": [
+        "app/enum/*"
+      ],
+      "@services/*": [
+        "app/services/*"
+      ],
+      "@env": [
+        "environments/environment"
+      ]
+    }
   },
+
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
