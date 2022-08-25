@@ -1,0 +1,12 @@
+<ng-template #loading>
+  <div class="external-component-loading c-modal">
+    <h4 class="loading-text"> Cargando Microfront Widget News...</h4>
+  </div>
+</ng-template>
+<ng-template #error><h3 style="color: #e81a1a">ERROR TO LOAD Microfront Widget News</h3></ng-template>
+<!--<chattigo-guioutbound></chattigo-guioutbound>-->
+<news-widget
+  *axLazyElement="mfUrl; loadingTemplate:loading; errorTemplate: error"
+  (readFullAction)="onReadFullAction($event)"
+>
+</news-widget>
